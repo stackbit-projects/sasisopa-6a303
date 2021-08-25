@@ -1,0 +1,102 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  post:
+    type: page
+    label: Post
+    folder: _posts
+    match: '*'
+    exclude:
+      - _defaults.md
+    fields:
+      - type: date
+        name: date
+        label: Date
+      - type: string
+        name: title
+        label: Title
+      - type: list
+        name: categories
+        label: Categories
+        items:
+          type: string
+      - type: string
+        name: author_staff_member
+        label: Author Staff Member
+  post_1:
+    type: page
+    label: Post 1
+    folder: _posts
+    match:
+      - _defaults.md
+    fields: []
+  staff_member:
+    type: page
+    label: Staff Member
+    folder: _staff_members
+    match: '*'
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: position
+        label: Position
+      - type: image
+        name: image_path
+        label: Image Path
+      - type: string
+        name: twitter
+        label: Twitter
+      - type: string
+        name: blurb
+        label: Blurb
+  footer:
+    type: data
+    label: Footer
+    file: footer.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: list
+          name: links
+          label: Links
+          items:
+            type: object
+            fields:
+              - type: string
+                name: name
+                label: Name
+              - type: string
+                name: link
+                label: Link
+              - type: boolean
+                name: new_window
+                label: New Window
+              - type: string
+                name: social_icon
+                label: Social Icon
+  navigation:
+    type: data
+    label: Navigation
+    file: navigation.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: link
+          label: Link
+        - type: boolean
+          name: new_window
+          label: New Window
+        - type: boolean
+          name: highlight
+          label: Highlight
